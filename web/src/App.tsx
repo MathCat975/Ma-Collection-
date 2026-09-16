@@ -1,18 +1,26 @@
 import { FormEvent, useState } from "react";
+import { Link, Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import { useAuth } from "./contexts/AuthContext";
+import { RegisterPage } from "./pages/RegisterPage";
+import { CollectionPage } from "./pages/CollectionPage";
 
 type LoginForm = { email: string; password: string };
 
 export function App(): JSX.Element {
+    return <Routes><Route path="/login" element={<LoginPage />} /><Route path="/register" element={<RegisterPage />} /><Route path="/collection" element={<CollectionPage />} /><Route path="*" element={<Navigate to="/login" replace />} /></Routes>;
+}
+
+function LoginPage(): JSX.Element {
     const [form, setForm] = useState<LoginForm>({ email: "", password: "" });
     const [message, setMessage] = useState<string>("");
+    const [isLoading, setIsLoading] = useState(false);
+    const { token, login } = useAuth();
+    const navigate = useNavigate();
 
     function handleSubmit(event: FormEvent<HTMLFormElement>): void {
         event.preventDefault();
-        if (!form.email.trim() || !form.password.trim()) {
-            setMessage("Veuillez renseigner votre adresse e-mail et votre mot de passe.");
-            return;
-        }
-        setMessage("Formulaire prêt : la connexion à l’API sera ajoutée prochainement.");
+        setMessage(""); setIsLoading(true);
+        login(form).then(() => navigate("/collection")).catch((error: Error) => setMessage(error.message)).finally(() => setIsLoading(false));
     }
 
     return (
@@ -28,10 +36,10 @@ export function App(): JSX.Element {
                     <input id="email" name="email" type="email" autoComplete="email" placeholder="vous@exemple.fr" value={form.email} onChange={(event) => setForm({ ...form, email: event.target.value })} required />
                     <label htmlFor="password">Mot de passe</label>
                     <input id="password" name="password" type="password" autoComplete="current-password" placeholder="Votre mot de passe" value={form.password} onChange={(event) => setForm({ ...form, password: event.target.value })} required />
-                    <button type="submit">Se connecter</button>
+                    <button type="submit" disabled={isLoading}>{isLoading ? "Connexion..." : "Se connecter"}</button>
                     {message && <p className="form-message" role="status">{message}</p>}
                 </form>
-                <p className="signup-link">Pas encore de compte ? <a href="#register">Créer un compte</a></p>
+                <p className="signup-link">Pas encore de compte ? <Link to="/register">Créer un compte</Link></p>
             </section>
         </main>
     );
