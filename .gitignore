@@ -1,0 +1,17 @@
+api/.venv/
+api/__pycache__/
+api/**/*.py[cod]
+api/.pytest_cache/
+api/.env
+api/*.db
+api/*.sqlite3
+
+web/node_modules/
+web/dist/
+web/*.tsbuildinfo
+web/.env
+
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

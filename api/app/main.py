@@ -7,6 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.db.init_db import create_db_and_tables
 from app.exceptions import install_exception_handlers
 from app.routers.auth import router as auth_router
+from app.routers.items import router as items_router
 
 
 @asynccontextmanager
@@ -31,3 +32,4 @@ app.add_middleware(
 
 install_exception_handlers(app)
 app.include_router(auth_router)
+app.include_router(items_router)
