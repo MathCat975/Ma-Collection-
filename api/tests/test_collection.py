@@ -97,6 +97,14 @@ def test_personal_collection_lifecycle_and_ownership() -> None:
             "/me/collection",
             headers=other_headers,
         )
+        owner_stats = client.get(
+            "/me/stats",
+            headers=owner_headers,
+        )
+        other_stats = client.get(
+            "/me/stats",
+            headers=other_headers,
+        )
         forbidden_update = client.patch(
             f"/me/collection/{entry_id}",
             headers=other_headers,
@@ -120,6 +128,25 @@ def test_personal_collection_lifecycle_and_ownership() -> None:
     assert updated.json()["note"] == 5
     assert len(filtered.json()) == 1
     assert other_list.json() == []
+    assert owner_stats.status_code == 200
+    assert owner_stats.json() == {
+        "total": 1,
+        "par_statut": {
+            "a_decouvrir": 0,
+            "en_cours": 0,
+            "termine": 1,
+        },
+        "note_moyenne": 5.0,
+    }
+    assert other_stats.json() == {
+        "total": 0,
+        "par_statut": {
+            "a_decouvrir": 0,
+            "en_cours": 0,
+            "termine": 0,
+        },
+        "note_moyenne": None,
+    }
     assert forbidden_update.status_code == 404
     assert forbidden_delete.status_code == 404
     assert deleted.status_code == 204

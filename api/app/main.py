@@ -9,6 +9,7 @@ from app.exceptions import install_exception_handlers
 from app.routers.auth import router as auth_router
 from app.routers.collection import router as collection_router
 from app.routers.items import router as items_router
+from app.routers.stats import router as stats_router
 
 
 @asynccontextmanager
@@ -35,3 +36,4 @@ install_exception_handlers(app)
 app.include_router(auth_router)
 app.include_router(items_router)
 app.include_router(collection_router)
+app.include_router(stats_router)
