@@ -1,5 +1,5 @@
-import asyncio
 import os
+from uuid import uuid4
 
 import pytest
 
@@ -57,9 +57,15 @@ def register_and_login(
 
 def test_personal_collection_lifecycle_and_ownership() -> None:
     with TestClient(app) as client:
-        item_id = asyncio.run(create_item())
-        owner_headers = register_and_login(client, "owner@example.com")
-        other_headers = register_and_login(client, "other@example.com")
+        item_id = client.portal.call(create_item)
+        owner_headers = register_and_login(
+            client,
+            f"owner-{uuid4()}@example.com",
+        )
+        other_headers = register_and_login(
+            client,
+            f"other-{uuid4()}@example.com",
+        )
 
         created = client.post(
             "/me/collection",

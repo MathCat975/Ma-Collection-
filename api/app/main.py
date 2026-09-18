@@ -5,6 +5,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.db.init_db import create_db_and_tables
+from app.db.session import engine
 from app.exceptions import install_exception_handlers
 from app.routers.auth import router as auth_router
 from app.routers.collection import router as collection_router
@@ -15,7 +16,10 @@ from app.routers.stats import router as stats_router
 @asynccontextmanager
 async def lifespan(_app: FastAPI) -> AsyncGenerator[None, None]:
     await create_db_and_tables()
-    yield
+    try:
+        yield
+    finally:
+        await engine.dispose()
 
 
 app = FastAPI(
