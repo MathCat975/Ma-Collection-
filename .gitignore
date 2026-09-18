@@ -5,6 +5,8 @@ api/.pytest_cache/
 api/.env
 api/*.db
 api/*.sqlite3
+.env.local
+node_modules/
 
 web/node_modules/
 web/dist/
@@ -15,3 +17,5 @@ web/.env
 .idea/
 .DS_Store
 Thumbs.db
+.neon
+.agents/
