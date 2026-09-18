@@ -7,6 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.db.init_db import create_db_and_tables
 from app.exceptions import install_exception_handlers
 from app.routers.auth import router as auth_router
+from app.routers.collection import router as collection_router
 from app.routers.items import router as items_router
 
 
@@ -26,10 +27,11 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173"],
     allow_credentials=True,
-    allow_methods=["GET", "POST"],
+    allow_methods=["GET", "POST", "PATCH", "DELETE"],
     allow_headers=["Authorization", "Content-Type"],
 )
 
 install_exception_handlers(app)
 app.include_router(auth_router)
 app.include_router(items_router)
+app.include_router(collection_router)
