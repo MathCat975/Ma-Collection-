@@ -24,22 +24,84 @@ export function CataloguePage({ mode = "catalogue" }: { mode?: "catalogue" | "co
         if (!select || !filters || filters.querySelector(".genre-pills")) return;
         const pills = document.createElement("div");
         pills.className = "genre-pills";
-        Array.from(select.options).forEach((option) => {
-            const button = document.createElement("button");
-            button.type = "button";
-            button.textContent = option.textContent ?? "";
-            button.className = option.selected ? "selected" : "";
-            button.onclick = () => {
-                select.value = option.value;
-                select.dispatchEvent(new Event("change", { bubbles: true }));
-                pills.querySelectorAll("button").forEach((item) => item.classList.remove("selected"));
-                button.classList.add("selected");
+        const options = Array.from(select.options);
+        const selectGenre = (option: HTMLOptionElement, button: HTMLButtonElement): void => {
+            select.value = option.value;
+            select.dispatchEvent(new Event("change", { bubbles: true }));
+            pills.querySelectorAll("button").forEach((item) => item.classList.remove("selected"));
+            button.classList.add("selected");
+        };
+        const allButton = document.createElement("button");
+        allButton.type = "button";
+        allButton.textContent = "Tous les genres";
+        allButton.className = "selected";
+        allButton.onclick = () => selectGenre(options[0], allButton);
+        pills.appendChild(allButton);
+        const groups: Record<string, string[]> = {
+            "Action & Aventure": ["Action & Aventure"], RPG: ["RPG", "RPG & Narration"],
+            Multijoueur: ["Multijoueur & Coopération", "Multijoueur & Party", "Multijoueur & Sport", "Multijoueur & Horreur", "Multijoueur & Tir"],
+            Tir: ["Tir", "Tir & Coopération"], Gestion: ["Gestion", "Gestion & Stratégie"],
+            Stratégie: ["Stratégie"], Réflexion: ["Réflexion"], Narration: ["Narration"],
+            Indépendant: ["Indépendant & Plateforme", "Indépendant & Survie", "Indépendant & Exploration", "Indépendant & RPG", "Indépendant & Action"]
+        };
+        Object.entries(groups).forEach(([name, values]) => {
+            const group = document.createElement("div");
+            group.className = "genre-group";
+            const toggle = document.createElement("button");
+            toggle.type = "button";
+            toggle.className = "genre-parent";
+            toggle.innerHTML = `${name}<span>+</span>`;
+            const children = document.createElement("div");
+            children.className = "genre-children";
+            values.forEach((value) => {
+                const option = options.find((item) => item.value === value);
+                if (!option) return;
+                const button = document.createElement("button");
+                button.type = "button";
+                button.textContent = value;
+                button.onclick = () => selectGenre(option, button);
+                children.appendChild(button);
+            });
+            toggle.onclick = () => {
+                filters.querySelectorAll<HTMLElement>(".genre-group.open").forEach((item) => {
+                    if (item !== group) {
+                        item.classList.remove("open");
+                        item.querySelector(".genre-parent span")!.textContent = "+";
+                    }
+                });
+                const open = group.classList.toggle("open");
+                toggle.querySelector("span")!.textContent = open ? "−" : "+";
             };
-            pills.appendChild(button);
+            group.append(toggle, children);
+            pills.appendChild(group);
         });
         filters.appendChild(pills);
-        return () => pills.remove();
+        const closeMenus = (event: MouseEvent): void => {
+            if (filters.contains(event.target as Node)) return;
+            filters.querySelectorAll<HTMLElement>(".genre-group.open").forEach((item) => {
+                item.classList.remove("open");
+                item.querySelector(".genre-parent span")!.textContent = "+";
+            });
+        };
+        document.addEventListener("click", closeMenus);
+        return () => { document.removeEventListener("click", closeMenus); pills.remove(); };
     }, [genres.length]);
+    useEffect(() => {
+        const shell = document.querySelector<HTMLElement>(".catalogue-shell");
+        const content = document.querySelector<HTMLElement>(".content");
+        if (!shell || !content || content.querySelector(".sidebar-toggle")) return;
+        const toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "sidebar-toggle";
+        toggle.setAttribute("aria-label", "Ouvrir ou fermer la navigation");
+        toggle.innerHTML = "☰";
+        toggle.onclick = () => {
+            const collapsed = shell.classList.toggle("sidebar-collapsed");
+            toggle.innerHTML = collapsed ? "☰" : "×";
+        };
+        content.prepend(toggle);
+        return () => toggle.remove();
+    }, []);
     const filtered = useMemo(() => source.filter((game) => (!query || `${game.title} ${game.description}`.toLowerCase().includes(query.toLowerCase())) && (!genre || game.genre === genre)), [query, genre, collection, favorites, mode]);
     
     const pages = Math.max(1, Math.ceil(filtered.length / limit));

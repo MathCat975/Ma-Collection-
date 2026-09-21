@@ -7,9 +7,5 @@ export function GameActions({ title }: { title: string }): JSX.Element {
             aria-label={`Ma collection : ${title}`} onClick={() => toggle("collection", title)}>
             {collection.includes(title) ? "✓ Dans ma collection" : "+ Ma collection"}
         </button>
-        <button type="button" aria-pressed={favorites.includes(title)}
-            aria-label={`Favori : ${title}`} onClick={() => toggle("favorites", title)}>
-            {favorites.includes(title) ? "★ Favori" : "☆ Favori"}
-        </button>
     </div>;
 }

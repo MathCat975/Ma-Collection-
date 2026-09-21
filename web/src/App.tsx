@@ -5,5 +5,5 @@ import { LoginPage } from "./pages/LoginPage";
 import { RegisterPage } from "./pages/RegisterPage";
 
 export function App(): JSX.Element {
-  return <Routes><Route path="/login" element={<LoginPage />} /><Route path="/register" element={<RegisterPage />} /><Route path="/catalogue" element={<CataloguePage key="catalogue" />} /><Route path="/collection" element={<CataloguePage key="collection" mode="collection" />} /><Route path="/favoris" element={<CataloguePage key="favorites" mode="favorites" />} /><Route path="/catalogue/:id" element={<ItemDetailPage />} /><Route path="*" element={<Navigate to="/catalogue" replace />} /></Routes>;
+  return <Routes><Route path="/login" element={<LoginPage />} /><Route path="/register" element={<RegisterPage />} /><Route path="/catalogue" element={<CataloguePage key="catalogue" />} /><Route path="/collection" element={<CataloguePage key="collection" mode="collection" />} /><Route path="/favoris" element={<Navigate to="/catalogue" replace />} /><Route path="/catalogue/:id" element={<ItemDetailPage />} /><Route path="*" element={<Navigate to="/catalogue" replace />} /></Routes>;
 }
