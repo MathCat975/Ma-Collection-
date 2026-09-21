@@ -41,6 +41,9 @@ class Settings(BaseSettings):
             )
 
         parts = urlsplit(value)
+        if parts.scheme != "postgresql+asyncpg":
+            raise ValueError("Une URL PostgreSQL avec asyncpg est requise")
+
         query = dict(parse_qsl(parts.query))
         ssl_mode = query.pop("sslmode", None)
         query.pop("channel_binding", None)

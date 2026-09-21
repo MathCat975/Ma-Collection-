@@ -7,6 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.db.init_db import create_db_and_tables
 from app.db.session import engine
 from app.exceptions import install_exception_handlers
+from app.schemas.error import ErrorResponse
 from app.routers.auth import router as auth_router
 from app.routers.collection import router as collection_router
 from app.routers.items import router as items_router
@@ -26,6 +27,7 @@ app = FastAPI(
     title="Ma Collection API",
     version="0.1.0",
     lifespan=lifespan,
+    responses={422: {"model": ErrorResponse, "description": "Donnees de requete invalides"}},
 )
 
 app.add_middleware(

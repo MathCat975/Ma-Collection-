@@ -1,0 +1,533 @@
+[
+  {
+    "titre": "The Legend of Zelda: Breath of the Wild",
+    "categorie": "Action & Aventure",
+    "description": "L'aventure en monde ouvert par excellence.",
+    "image_url": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000000025/7137262b5a64d921e193653f8aa0b722925abc5680380ca0e18a5cfd91697f58",
+    "annee": 2017,
+    "studio": "Nintendo EPD",
+    "plateforme": "Switch"
+  },
+  {
+    "titre": "The Witcher 3: Wild Hunt",
+    "categorie": "RPG",
+    "description": "Un RPG sombre avec une histoire et des quêtes incroyables.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/97cca1147b256f450331044255b1dbd2d57d609e/header_alt_assets_4.jpg?t=1788333513",
+    "annee": 2015,
+    "studio": "CD PROJEKT RED",
+    "plateforme": "PC, PS4, Xbox One, Switch"
+  },
+  {
+    "titre": "Grand Theft Auto V",
+    "categorie": "Action & Aventure",
+    "description": "Le monument du jeu en monde ouvert urbain.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/271590/header.jpg?t=1765387725",
+    "annee": 2015,
+    "studio": "Rockstar North",
+    "plateforme": "PC, PS4, PS5, Xbox"
+  },
+  {
+    "titre": "Red Dead Redemption 2",
+    "categorie": "Action & Aventure",
+    "description": "Une fresque historique ultra-réaliste au temps des cow-boys.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1174180/header.jpg?t=1759502961",
+    "annee": 2019,
+    "studio": "Rockstar Games",
+    "plateforme": "PC, PS4, Xbox One"
+  },
+  {
+    "titre": "God of War (2018)",
+    "categorie": "Action & Aventure",
+    "description": "Une aventure mythologique intense et touchante.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1593500/header.jpg?t=1763059412",
+    "annee": 2022,
+    "studio": "Santa Monica Studio, Jetpack Interactive",
+    "plateforme": "PC, PS4, PS5"
+  },
+  {
+    "titre": "Elden Ring",
+    "categorie": "Action & Aventure",
+    "description": "Un monde ouvert mystérieux, exigeant et fascinant.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1245620/f0b19c231f86fa0e633ff88a1a63459443017728/header_alt_assets_3.jpg?t=1789162449",
+    "annee": 2022,
+    "studio": "FromSoftware, Inc.",
+    "plateforme": "PC, PS4, PS5, Xbox"
+  },
+  {
+    "titre": "Horizon Zero Dawn",
+    "categorie": "Action & Aventure",
+    "description": "Une aventure post-apocalyptique avec des dinosaures robots.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1151640/header.jpg?t=1776465788",
+    "annee": 2020,
+    "studio": "Guerrilla",
+    "plateforme": "PC, PS4, PS5"
+  },
+  {
+    "titre": "Marvel's Spider-Man",
+    "categorie": "Action & Aventure",
+    "description": "Le plaisir absolu de se balancer entre les gratte-ciels de New York.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1817070/header.jpg?t=1787838689",
+    "annee": 2022,
+    "studio": "Insomniac Games, Nixxes Software",
+    "plateforme": "PC, PS4, PS5"
+  },
+  {
+    "titre": "Uncharted 4: A Thief's End",
+    "categorie": "Action & Aventure",
+    "description": "Une aventure digne d'un film d'Indiana Jones.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1659420/header.jpg?t=1779309472",
+    "annee": 2016,
+    "studio": "Naughty Dog",
+    "plateforme": "PS4, PS5, PC"
+  },
+  {
+    "titre": "Tomb Raider (2013)",
+    "categorie": "Action & Aventure",
+    "description": "Le renouveau moderne et intense de Lara Croft.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/203160/9e67774e97cdd155f287146e62611eb445514ac6/header.jpg?t=1765220424",
+    "annee": 2013,
+    "studio": "Crystal Dynamics, Eidos-Montréal, Feral Interactive, Nixxes",
+    "plateforme": "PC, PS3, PS4, Xbox"
+  },
+  {
+    "titre": "Assassin's Creed Odyssey",
+    "categorie": "Action & Aventure",
+    "description": "Une immense épopée dans la Grèce antique.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/812140/header.jpg?t=1786633104",
+    "annee": 2018,
+    "studio": "Ubisoft Quebec, Ubisoft Montreal, Ubisoft Bucharest, Ubisoft Singapore, Ubisoft Montpellier, Ubisoft Kiev, Ubisoft Shanghai",
+    "plateforme": "PC, PS4, Xbox One"
+  },
+  {
+    "titre": "Cyberpunk 2077",
+    "categorie": "Action & Aventure",
+    "description": "Une immersion totale dans une métropole futuriste et dystopique.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1091500/e9047d8ec47ae3d94bb8b464fb0fc9e9972b4ac7/header.jpg?t=1784714077",
+    "annee": 2020,
+    "studio": "CD PROJEKT RED",
+    "plateforme": "PC, PS4, PS5, Xbox"
+  },
+  {
+    "titre": "Hades",
+    "categorie": "Action & Aventure",
+    "description": "Un jeu d'action frénétique dans les enfers grecs.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1145360/header.jpg?t=1758127023",
+    "annee": 2020,
+    "studio": "Supergiant Games",
+    "plateforme": "PC, Switch, PS, Xbox"
+  },
+  {
+    "titre": "Minecraft",
+    "categorie": "Multijoueur & Coopération",
+    "description": "Construction et survie dans un monde sans limites.",
+    "image_url": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/About-Minecraft_Featured-Image-0_570x321.jpg",
+    "annee": 2011,
+    "studio": "Mojang Studios",
+    "plateforme": "PC, Switch, PS, Xbox, mobile"
+  },
+  {
+    "titre": "It Takes Two",
+    "categorie": "Multijoueur & Coopération",
+    "description": "Une aventure conçue pour être jouée à deux.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1426210/header.jpg?t=1777395376",
+    "annee": 2021,
+    "studio": "Hazelight Studios",
+    "plateforme": "PC, PS4, PS5, Xbox"
+  },
+  {
+    "titre": "Mario Kart 8 Deluxe",
+    "categorie": "Multijoueur & Party",
+    "description": "La course idéale entre amis ou en famille.",
+    "image_url": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000000153/de697f487a36d802dd9a5ff0341f717c8486221f2f1219b675af37aca63bc453",
+    "annee": 2017,
+    "studio": "Nintendo EAD",
+    "plateforme": "Switch"
+  },
+  {
+    "titre": "Super Smash Bros. Ultimate",
+    "categorie": "Multijoueur & Party",
+    "description": "Toutes les icônes du jeu vidéo réunies dans un combat.",
+    "image_url": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000012332/ac4d1fc9824876ce756406f0525d50c57ded4b2a666f6dfe40a6ac5c3563fad9",
+    "annee": 2018,
+    "studio": "Bandai Namco Studios, Sora Ltd.",
+    "plateforme": "Switch"
+  },
+  {
+    "titre": "Among Us",
+    "categorie": "Multijoueur & Party",
+    "description": "Enquête et trahison dans l'espace.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/945360/header.jpg?t=1787088490",
+    "annee": 2018,
+    "studio": "Innersloth",
+    "plateforme": "PC, Switch, PS, Xbox, mobile"
+  },
+  {
+    "titre": "Rocket League",
+    "categorie": "Multijoueur & Sport",
+    "description": "Du football avec des voitures propulsées par des fusées.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/252950/0a3a0440e101436b154c06040722f27950d67e22/header_alt_assets_16.jpg?t=1781288662",
+    "annee": 2015,
+    "studio": "Psyonix",
+    "plateforme": "PC, Switch, PS, Xbox"
+  },
+  {
+    "titre": "Overcooked! All You Can Eat",
+    "categorie": "Multijoueur & Coopération",
+    "description": "Une cuisine coopérative drôle et stressante.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1243830/header.jpg?t=1788969190",
+    "annee": 2021,
+    "studio": "Team17 Digital, Ghost Town Games",
+    "plateforme": "PC, Switch, PS, Xbox"
+  },
+  {
+    "titre": "Fall Guys",
+    "categorie": "Multijoueur & Party",
+    "description": "Une course d'obstacles colorée et loufoque.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1097150/header.jpg?t=1698763175",
+    "annee": 2020,
+    "studio": "Mediatonic",
+    "plateforme": "PC, Switch, PS, Xbox"
+  },
+  {
+    "titre": "Animal Crossing: New Horizons",
+    "categorie": "Simulation & Party",
+    "description": "Une vie paisible sur une île déserte.",
+    "image_url": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000027619/9989957eae3a6b545194c42fec2071675c34aadacd65e6b33fdfe7b3b6a86c3a",
+    "annee": 2020,
+    "studio": "Nintendo EPD",
+    "plateforme": "Switch"
+  },
+  {
+    "titre": "Sea of Thieves",
+    "categorie": "Multijoueur & Coopération",
+    "description": "Une aventure de pirates à partager avec son équipage.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1172620/579c6d544424019a032f4add98e8f923925c1cef/header.jpg?t=1789650456",
+    "annee": 2020,
+    "studio": "Rare Ltd",
+    "plateforme": "PC, Xbox"
+  },
+  {
+    "titre": "Lethal Company",
+    "categorie": "Multijoueur & Horreur",
+    "description": "Une expédition coopérative hilarante et terrifiante.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1966720/header.jpg?t=1775380053",
+    "annee": 2023,
+    "studio": "Zeekerss",
+    "plateforme": "PC"
+  },
+  {
+    "titre": "Helldivers 2",
+    "categorie": "Multijoueur & Tir",
+    "description": "Un tir galactique explosif à jouer en équipe.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/553850/850e2f9e5bb15c5706bb9a1edc832f4f782e8be5/header.jpg?t=1789585784",
+    "annee": 2024,
+    "studio": "Arrowhead Game Studios",
+    "plateforme": "PC, PS5"
+  },
+  {
+    "titre": "Counter-Strike 2",
+    "categorie": "Tir",
+    "description": "La référence du tir tactique compétitif.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/730/162664aa5da85f418105350c5d67ca565f6c3713/header.jpg?t=1789251637",
+    "annee": 2012,
+    "studio": "Valve",
+    "plateforme": "PC"
+  },
+  {
+    "titre": "Fortnite",
+    "categorie": "Tir",
+    "description": "Le Battle Royale phénomène de la culture pop.",
+    "image_url": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000010192/a6027537ba5b8116ccda409857a5e5cba4c952613ea87619ae214fee70e763c0",
+    "annee": 2017,
+    "studio": "Epic Games",
+    "plateforme": "PC, Switch, PS, Xbox, mobile"
+  },
+  {
+    "titre": "Apex Legends",
+    "categorie": "Tir",
+    "description": "Un Battle Royale dynamique basé sur des héros.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1172470/6cf04767652d703b6050da84b82cfb1194258d7d/header.jpg?t=1789582450",
+    "annee": 2020,
+    "studio": "Respawn",
+    "plateforme": "PC, PS, Xbox, Switch"
+  },
+  {
+    "titre": "Call of Duty: Warzone",
+    "categorie": "Tir",
+    "description": "Un combat à grande échelle intense et moderne.",
+    "image_url": "https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/warzone2/blackops7/evergreen/WZ_LP-Update_Meta.webp",
+    "annee": 2020,
+    "studio": "Infinity Ward, Raven Software",
+    "plateforme": "PC, PS, Xbox"
+  },
+  {
+    "titre": "Valorant",
+    "categorie": "Tir",
+    "description": "Un mélange de précision et de pouvoirs uniques.",
+    "image_url": "https://images.hdqwalls.com/wallpapers/valorant-key-art-phoenix-and-jett-4k-v5.jpg",
+    "annee": 2020,
+    "studio": "Riot Games",
+    "plateforme": "PC"
+  },
+  {
+    "titre": "Doom Eternal",
+    "categorie": "Tir",
+    "description": "Un FPS ultra-rapide et brutal sur fond de métal.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/782330/feaf8293bcd2d078422faa547bc0d707c08f606e/header.jpg?t=1783432602",
+    "annee": 2020,
+    "studio": "id Software",
+    "plateforme": "PC, Switch, PS, Xbox"
+  },
+  {
+    "titre": "BioShock Infinite",
+    "categorie": "Tir",
+    "description": "Un FPS narratif inoubliable dans une cité flottante.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/8870/header.jpg?t=1728673518",
+    "annee": 2013,
+    "studio": "Irrational Games",
+    "plateforme": "PC, PS3, PS4, Xbox"
+  },
+  {
+    "titre": "Borderlands 2",
+    "categorie": "Tir",
+    "description": "Un tir déjanté rempli d'humour et d'armes.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/49520/header.jpg?t=1751931279",
+    "annee": 2012,
+    "studio": "Gearbox Software",
+    "plateforme": "PC, PS, Xbox, Switch"
+  },
+  {
+    "titre": "Left 4 Dead 2",
+    "categorie": "Tir & Coopération",
+    "description": "Le jeu coopératif contre des hordes de zombies.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/header.jpg?t=1772742214",
+    "annee": 2009,
+    "studio": "Valve",
+    "plateforme": "PC, Xbox 360"
+  },
+  {
+    "titre": "Portal 2",
+    "categorie": "Réflexion",
+    "description": "Un chef-d'œuvre d'humour et d'énigmes.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/620/header.jpg?t=1745363004",
+    "annee": 2011,
+    "studio": "Valve",
+    "plateforme": "PC, PS3, Xbox 360, Switch"
+  },
+  {
+    "titre": "Les Sims 4",
+    "categorie": "Gestion",
+    "description": "Créez des avatars et construisez des maisons.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1222670/header.jpg?t=1787850077",
+    "annee": 2014,
+    "studio": "Maxis",
+    "plateforme": "PC, PS, Xbox"
+  },
+  {
+    "titre": "Civilization VI",
+    "categorie": "Stratégie",
+    "description": "Bâtissez un empire à travers l'histoire.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/289070/header.jpg?t=1784651829",
+    "annee": 2016,
+    "studio": "Firaxis Games, Aspyr",
+    "plateforme": "PC, Switch, PS4, Xbox One"
+  },
+  {
+    "titre": "Stardew Valley",
+    "categorie": "Gestion",
+    "description": "Une ferme pixelisée, relaxante et riche.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/413150/header.jpg?t=1786554168",
+    "annee": 2016,
+    "studio": "ConcernedApe",
+    "plateforme": "PC, Switch, PS, Xbox, mobile"
+  },
+  {
+    "titre": "Cities: Skylines",
+    "categorie": "Gestion",
+    "description": "Construisez et gérez votre propre ville.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/255710/header.jpg?t=1789394186",
+    "annee": 2015,
+    "studio": "Colossal Order Ltd.",
+    "plateforme": "PC, PS4, Xbox, Switch"
+  },
+  {
+    "titre": "Age of Empires II: Definitive Edition",
+    "categorie": "Stratégie",
+    "description": "Le roi de la stratégie médiévale en temps réel.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/813780/header.jpg?t=1785432195",
+    "annee": 2019,
+    "studio": "Forgotten Empires, Tantalus Media, Wicked Witch, World's Edge",
+    "plateforme": "PC, Xbox"
+  },
+  {
+    "titre": "Anno 1800",
+    "categorie": "Gestion & Stratégie",
+    "description": "Commerce et industrie à l'ère révolutionnaire.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/916440/header.jpg?t=1778771290",
+    "annee": 2019,
+    "studio": "Ubisoft Mainz",
+    "plateforme": "PC"
+  },
+  {
+    "titre": "Slay the Spire",
+    "categorie": "Stratégie",
+    "description": "Des cartes et une stratégie très addictives.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/646570/header.jpg?t=1774015376",
+    "annee": 2019,
+    "studio": "Mega Crit",
+    "plateforme": "PC, Switch, PS, Xbox, mobile"
+  },
+  {
+    "titre": "The Witness",
+    "categorie": "Réflexion",
+    "description": "Des énigmes visuelles sur une île mystérieuse.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/210970/header.jpg?t=1720810823",
+    "annee": 2016,
+    "studio": "Thekla, Inc.",
+    "plateforme": "PC, PS4, Xbox One, mobile"
+  },
+  {
+    "titre": "Baldur's Gate 3",
+    "categorie": "RPG",
+    "description": "Liberté, écriture et choix dans Donjons & Dragons.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1086940/48a2fcbda8565bb45025e98fd8ebde8a7203f6a0/header.jpg?t=1777363040",
+    "annee": 2023,
+    "studio": "Larian Studios",
+    "plateforme": "PC, PS5, Xbox"
+  },
+  {
+    "titre": "Skyrim",
+    "categorie": "RPG",
+    "description": "Un RPG fantastique mythique en liberté totale.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/489830/header.jpg?t=1786648247",
+    "annee": 2016,
+    "studio": "Bethesda Game Studios",
+    "plateforme": "PC, Switch, PS, Xbox"
+  },
+  {
+    "titre": "Persona 5 Royal",
+    "categorie": "RPG",
+    "description": "Vie lycéenne stylée et combats au tour par tour.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1687950/header.jpg?t=1783356822",
+    "annee": 2022,
+    "studio": "ATLUS",
+    "plateforme": "PC, Switch, PS4, Xbox"
+  },
+  {
+    "titre": "Detroit: Become Human",
+    "categorie": "RPG & Narration",
+    "description": "Un film interactif sur le futur des androïdes.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1222140/header.jpg?t=1667468479",
+    "annee": 2020,
+    "studio": "Quantic Dream",
+    "plateforme": "PC, PS4"
+  },
+  {
+    "titre": "Life is Strange",
+    "categorie": "Narration",
+    "description": "Une aventure émouvante avec le pouvoir de remonter le temps.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/319630/header.jpg?t=1772725755",
+    "annee": 2015,
+    "studio": "DONTNOD Entertainment",
+    "plateforme": "PC, PS, Xbox, Switch, mobile"
+  },
+  {
+    "titre": "Mass Effect Legendary Edition",
+    "categorie": "RPG",
+    "description": "Une trilogie de space-opera légendaire.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1328670/header.jpg?t=1777395134",
+    "annee": 2021,
+    "studio": "BioWare",
+    "plateforme": "PC, PS4, Xbox One"
+  },
+  {
+    "titre": "Fallout 4",
+    "categorie": "RPG",
+    "description": "Un RPG de survie dans un monde dévasté.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/377160/header.jpg?t=1786648137",
+    "annee": 2015,
+    "studio": "Bethesda Game Studios",
+    "plateforme": "PC, PS4, Xbox One"
+  },
+  {
+    "titre": "Disco Elysium",
+    "categorie": "RPG & Narration",
+    "description": "Une enquête textuelle profonde et psychologique.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/632470/816ea59d6d8ac525f79a07c3a7afa94eddb3437c/header.jpg?t=1780913406",
+    "annee": 2019,
+    "studio": "ZA/UM",
+    "plateforme": "PC, PS, Xbox, Switch"
+  },
+  {
+    "titre": "Hollow Knight",
+    "categorie": "Indépendant & Plateforme",
+    "description": "Une aventure 2D sombre et poétique.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/367520/3c3489495136b26b34f8a9543c7f5645b99d388c/header.jpg?t=1776125684",
+    "annee": 2017,
+    "studio": "Team Cherry",
+    "plateforme": "PC, Switch, PS, Xbox"
+  },
+  {
+    "titre": "Celeste",
+    "categorie": "Indépendant & Plateforme",
+    "description": "Un jeu de plateforme difficile mais bienveillant.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/504230/header.jpg?t=1714089525",
+    "annee": 2018,
+    "studio": "Maddy Makes Games",
+    "plateforme": "PC, Switch, PS, Xbox"
+  },
+  {
+    "titre": "Ori and the Blind Forest",
+    "categorie": "Indépendant & Plateforme",
+    "description": "Une aventure visuellement éblouissante.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/261570/header.jpg?t=1667504148",
+    "annee": 2015,
+    "studio": "Moon Studios GmbH",
+    "plateforme": "PC, Switch, Xbox"
+  },
+  {
+    "titre": "Subnautica",
+    "categorie": "Indépendant & Survie",
+    "description": "Une exploration sous-marine fascinante.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/264710/header.jpg?t=1777456112",
+    "annee": 2018,
+    "studio": "Unknown Worlds Entertainment",
+    "plateforme": "PC, PS, Xbox, Switch"
+  },
+  {
+    "titre": "Outer Wilds",
+    "categorie": "Indépendant & Exploration",
+    "description": "Une exploration spatiale basée sur la curiosité.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/753640/079ae4a7ff4b5875adc5c63c4c0b84e5a3e6966b/header.jpg?t=1785424341",
+    "annee": 2019,
+    "studio": "Mobius Digital",
+    "plateforme": "PC, PS4, Xbox One, Switch"
+  },
+  {
+    "titre": "Undertale",
+    "categorie": "Indépendant & RPG",
+    "description": "Un RPG rétro où l'on peut épargner ses ennemis.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/391540/header.jpg?t=1757349115",
+    "annee": 2015,
+    "studio": "tobyfox",
+    "plateforme": "PC, Switch, PS, Xbox"
+  },
+  {
+    "titre": "Dead Cells",
+    "categorie": "Indépendant & Action",
+    "description": "Un jeu d'action français où l'on recommence plus fort.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/588650/header.jpg?t=1779086887",
+    "annee": 2018,
+    "studio": "Motion Twin, Evil Empire",
+    "plateforme": "PC, Switch, PS, Xbox, mobile"
+  },
+  {
+    "titre": "The Last of Us Part I",
+    "categorie": "Action & Aventure",
+    "description": "Une aventure post-apocalyptique portée par des personnages forts.",
+    "image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1888930/header.jpg?t=1750959031",
+    "annee": 2023,
+    "studio": "Naughty Dog, Iron Galaxy Studios",
+    "plateforme": "PC, PS5"
+  }
+]

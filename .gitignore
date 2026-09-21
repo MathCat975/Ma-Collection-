@@ -19,3 +19,7 @@ web/.env
 Thumbs.db
 .neon
 .agents/
+.pytest_cache/
+web/coverage/
+web/test-results/
+web/playwright-report/

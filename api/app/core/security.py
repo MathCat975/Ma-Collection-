@@ -40,6 +40,7 @@ def decode_access_token(token: str) -> int:
             token,
             settings.jwt_secret_key,
             algorithms=[settings.jwt_algorithm],
+            options={"require": ["sub", "iat", "exp"]},
         )
         subject = payload.get("sub")
 

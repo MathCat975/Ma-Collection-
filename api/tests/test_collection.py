@@ -1,19 +1,4 @@
-import os
 from uuid import uuid4
-
-import pytest
-
-
-test_database_url = os.getenv("TEST_DATABASE_URL")
-
-if test_database_url is None:
-    pytest.skip(
-        "TEST_DATABASE_URL est requis pour les tests PostgreSQL",
-        allow_module_level=True,
-    )
-
-os.environ["JWT_SECRET_KEY"] = "test-secret-key-that-is-long-enough-for-hs256"
-os.environ["DATABASE_URL"] = test_database_url
 
 from fastapi.testclient import TestClient
 
