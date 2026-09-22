@@ -1,0 +1,38 @@
+import { expect, test } from "@playwright/test";
+
+test("parcours réel React vers FastAPI et PostgreSQL", async ({ page }, testInfo) => {
+  const email = `integration-${Date.now()}@example.com`;
+  await page.goto("/register");
+  await page.getByLabel("Adresse e-mail").fill(email);
+  await page.getByLabel("Mot de passe", { exact: true }).fill("motdepassefort");
+  await page.getByLabel("Confirmer le mot de passe").fill("motdepassefort");
+  await page.getByRole("button", { name: "Créer mon compte" }).click();
+  await expect(page).toHaveURL(/\/login$/);
+  await page.getByLabel("Adresse e-mail").fill(email);
+  await page.getByLabel("Mot de passe", { exact: true }).fill("motdepassefort");
+  await page.getByRole("button", { name: "Se connecter", exact: true }).click();
+  await page.getByRole("link", { name: "Explorer le catalogue" }).click();
+  await page.getByLabel("Rechercher un jeu").fill("Celeste");
+  const card = page.locator(".game-card").filter({ hasText: "Celeste" });
+  await card.getByRole("link", { name: "Voir la fiche", exact: true }).click();
+  await expect(page.getByRole("heading", { name: "Celeste", exact: true })).toBeVisible();
+  await page.getByRole("button", { name: "Ma collection : Celeste" }).click();
+  await expect(page.getByRole("button", { name: "Ma collection : Celeste" })).toHaveAttribute("aria-pressed", "true");
+  await page.getByRole("link", { name: "Ma collection", exact: true }).click();
+  await page.getByRole("combobox", { name: "Statut", exact: true }).last().selectOption("termine");
+  await page.getByRole("combobox", { name: "Note", exact: true }).selectOption("4");
+  await page.getByLabel("Commentaire").fill("Test réel PostgreSQL");
+  await page.getByRole("button", { name: "Enregistrer", exact: true }).click();
+  await expect(page.getByText("Modifications enregistrées.")).toBeVisible();
+  await page.reload();
+  await expect(page.getByLabel("Commentaire")).toHaveValue("Test réel PostgreSQL");
+  await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.screenshot({ path: testInfo.outputPath("collection-mobile.png"), fullPage: true });
+  await page.getByRole("link", { name: "Statistiques" }).click();
+  await expect(page.getByText("4.0 / 5")).toBeVisible();
+  await page.getByRole("link", { name: "Ma collection" }).click();
+  await page.getByRole("button", { name: "Supprimer" }).click();
+  await expect(page.getByText("Aucun jeu dans cette sélection")).toBeVisible();
+  await page.getByRole("button", { name: "Se déconnecter" }).click();
+  await expect(page).toHaveURL(/\/login$/);
+});
