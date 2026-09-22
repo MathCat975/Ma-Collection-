@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { CSSProperties, useState } from "react";
 import { Link } from "react-router-dom";
 import { useCollection } from "../contexts/CollectionContext";
 import { PageLayout } from "../components/PageLayout";
@@ -16,9 +16,26 @@ export function CollectionPage(): JSX.Element {
         ? (b.note ?? 0) - (a.note ?? 0)
         : Date.parse(b.date_ajout) - Date.parse(a.date_ajout),
     );
+  const collage = entries.slice(0, 8);
   return (
     <PageLayout>
-      <h1>Ma collection</h1>
+      <section className="hero hero-collection">
+        <div className="hero-collage" aria-hidden="true">
+          {collage.map((entry, index) => (
+            <img key={entry.id} src={entry.item.image_url} alt="" style={{ "--i": index } as CSSProperties} />
+          ))}
+        </div>
+        <div className="hero-content">
+          <p className="eyebrow">Votre univers</p>
+          <h1>Ma collection</h1>
+          <p>Organisez les jeux que vous souhaitez garder dans votre collection.</p>
+        </div>
+        <div className="hero-count"><strong>{entries.length}</strong><span>jeu{entries.length > 1 ? "x" : ""}</span></div>
+      </section>
+      <div className="section-heading collection-heading">
+        <div><h2>Ma collection</h2><p className="section-subtitle">Retrouvez les jeux que vous avez ajoutés</p></div>
+        <span>{visible.length} résultat{visible.length > 1 ? "s" : ""}</span>
+      </div>
       <section className="collection-filters">
         <label>
           Statut

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { GameCarousel } from "../components/GameCarousel";
 import { GameCover } from "../components/GameCover";
@@ -18,6 +18,8 @@ export function CataloguePage(): JSX.Element {
   const [error, setError] = useState("");
   const [catalogueError, setCatalogueError] = useState("");
   const [retry, setRetry] = useState(0);
+  const [openFilter, setOpenFilter] = useState<string | null>(null);
+  const filterRef = useRef<HTMLElement>(null);
   useEffect(() => {
     let active = true;
     setCatalogueError("");
@@ -57,6 +59,21 @@ export function CataloguePage(): JSX.Element {
   }, [q, genre, page, retry]);
   const genres = [...new Set(catalogue.map((item) => item.categorie))].sort();
   const pages = Math.max(1, Math.ceil((data?.total ?? 0) / 12));
+  const genreGroups = [
+    "Action & Aventure", "RPG", "Multijoueur", "Simulation", "Tir",
+    "Réflexion", "Gestion", "Stratégie", "Narration", "Indépendant",
+  ].map((label) => ({
+    label,
+    values: genres.filter((value) => value === label || value.startsWith(`${label} &`)),
+  })).filter((group) => group.values.length > 0);
+  const platformValues = [...new Set(catalogue.flatMap((item) => item.plateforme.split(/[,·]/).map((value) => value.trim()).filter(Boolean)))].sort();
+  useEffect(() => {
+    const close = (event: MouseEvent) => {
+      if (filterRef.current && !filterRef.current.contains(event.target as Node)) setOpenFilter(null);
+    };
+    document.addEventListener("mousedown", close);
+    return () => document.removeEventListener("mousedown", close);
+  }, []);
   return (
     <PageLayout>
       {catalogueError && !error && (
@@ -84,20 +101,34 @@ export function CataloguePage(): JSX.Element {
       {query.trim().length === 1 && (
         <p role="status">Saisissez au moins deux caractères pour rechercher.</p>
       )}
-      <section className="filters">
-        <select
-          aria-label="Filtrer par genre"
-          value={genre}
-          onChange={(event) => {
-            setGenre(event.target.value);
-            setPage(1);
-          }}
-        >
-          <option value="">Tous les genres</option>
-          {genres.map((value) => (
-            <option key={value}>{value}</option>
-          ))}
-        </select>
+      <section className="filters" ref={filterRef}>
+        <button className={`filter-pill ${!genre ? "selected" : ""}`} onClick={() => { setGenre(""); setPage(1); setOpenFilter(null); }}>
+          Tous les genres
+        </button>
+        {genreGroups.map((group) => (
+          <div className={`filter-group ${openFilter === group.label ? "open" : ""}`} key={group.label}>
+            <button className="filter-pill" aria-expanded={openFilter === group.label} onClick={() => setOpenFilter(openFilter === group.label ? null : group.label)}>
+              {group.label}<span className="filter-toggle" aria-hidden="true">{openFilter === group.label ? "−" : "+"}</span>
+            </button>
+            <div className="filter-menu">
+              {group.values.map((value) => (
+                <button className={genre === value ? "active" : ""} key={value} onClick={() => { setGenre(value); setPage(1); setOpenFilter(null); }}>
+                  {value}
+                </button>
+              ))}
+            </div>
+          </div>
+        ))}
+        <div className={`filter-group ${openFilter === "Plateforme" ? "open" : ""}`}>
+          <button className="filter-pill" aria-expanded={openFilter === "Plateforme"} onClick={() => setOpenFilter(openFilter === "Plateforme" ? null : "Plateforme")}>
+            Plateforme<span className="filter-toggle" aria-hidden="true">{openFilter === "Plateforme" ? "−" : "+"}</span>
+          </button>
+          <div className="filter-menu">
+            {platformValues.map((value) => (
+              <button key={value} onClick={() => setOpenFilter(null)}>{value}</button>
+            ))}
+          </div>
+        </div>
       </section>
       {loading ? (
         <p role="status">Chargement du catalogue…</p>
