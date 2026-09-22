@@ -1,14 +1,20 @@
-import { CSSProperties, useState } from "react";
+import { CSSProperties, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useCollection } from "../contexts/CollectionContext";
 import { PageLayout } from "../components/PageLayout";
 import { EntryEditor } from "../components/EntryEditor";
 import { GameCover } from "../components/GameCover";
 import { statusLabels } from "../types/api";
+import { Item } from "../types/api";
+import { api } from "../services/api";
 export function CollectionPage(): JSX.Element {
   const { entries, loading, error, refresh } = useCollection();
   const [statut, setStatut] = useState("");
   const [tri, setTri] = useState("date");
+  const [catalogue, setCatalogue] = useState<Item[]>([]);
+  useEffect(() => {
+    api.catalogue().then(setCatalogue).catch(() => setCatalogue([]));
+  }, []);
   const visible = entries
     .filter((entry) => !statut || entry.statut === statut)
     .sort((a, b) =>
@@ -16,13 +22,15 @@ export function CollectionPage(): JSX.Element {
         ? (b.note ?? 0) - (a.note ?? 0)
         : Date.parse(b.date_ajout) - Date.parse(a.date_ajout),
     );
-  const collage = entries.slice(0, 8);
+  const collage = entries.length > 0
+    ? entries.slice(0, 8).map((entry) => entry.item)
+    : catalogue.slice(0, 8);
   return (
     <PageLayout>
       <section className="hero hero-collection">
         <div className="hero-collage" aria-hidden="true">
-          {collage.map((entry, index) => (
-            <img key={entry.id} src={entry.item.image_url} alt="" style={{ "--i": index } as CSSProperties} />
+          {collage.map((item, index) => (
+            <img key={item.id} src={item.image_url} alt="" style={{ "--i": index } as CSSProperties} />
           ))}
         </div>
         <div className="hero-content">
@@ -73,7 +81,7 @@ export function CollectionPage(): JSX.Element {
               <Link to="/catalogue">Explorer le catalogue</Link>
             </section>
           )}
-          <section className="game-grid">
+          <section className="game-grid collection-grid">
             {visible.map((entry) => (
               <article className="game-card" key={entry.id}>
                 <GameCover

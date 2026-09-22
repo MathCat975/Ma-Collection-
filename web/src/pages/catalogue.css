@@ -417,6 +417,22 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 15px;
 }
+.collection-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
+}
+.collection-grid .game-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #293542;
+  border-radius: 7px;
+}
+.collection-grid .game-card h2 {
+  min-height: 24px;
+  margin: 16px 14px 0;
+  font-size: 0.98rem;
+}
+.collection-grid .game-card h2 a { margin: 0; font-weight: 700; }
 .game-card {
   overflow: hidden;
   background: #1b2028;
@@ -750,6 +766,7 @@ select:focus-visible {
 }
 .entry-editor {
   padding: 12px;
+  flex: 1;
 }
 .entry-editor input,
 .entry-editor select,
@@ -817,6 +834,53 @@ button:disabled {
   .search {
     max-width: 100%;
   }
+}
+.entry-editor p {
+  margin: 12px 0 14px;
+  color: #8d9aaa;
+  font-size: 0.82rem;
+}
+.entry-editor button {
+  width: 100%;
+  min-height: 34px;
+  margin-top: 8px;
+  padding: 8px 12px;
+  border: 1px solid #3e83b1;
+  border-radius: 5px;
+  background: #247eaf;
+  color: #fff;
+  font: inherit;
+  font-size: 0.86rem;
+  cursor: pointer;
+}
+.entry-editor button:hover { background: #2d9bd3; }
+.entry-editor button[type="button"] {
+  border-color: #704654;
+  background: #34232b;
+  color: #e4a8b8;
+}
+.entry-editor button[type="button"]:hover { background: #54303b; }
+.entry-summary {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 11px;
+  padding: 14px;
+  color: #cbd5e1;
+  font-size: 0.85rem;
+}
+.summary-line { display: flex; justify-content: space-between; gap: 12px; padding-bottom: 9px; border-bottom: 1px solid #2b3540; }
+.summary-line span, .summary-comment > span { color: #8493a4; }
+.summary-line strong { color: #f1f5f9; font-weight: 600; }
+.summary-comment p { min-height: 42px; margin: 7px 0 0; padding: 9px; border-radius: 5px; background: #101822; color: #e8edf3; white-space: pre-wrap; }
+.summary-actions { display: grid; gap: 7px; margin-top: auto; }
+.entry-summary .summary-actions { margin-top: 4px; }
+.summary-actions button { min-height: 32px; padding: 7px 10px; border: 1px solid #3e83b1; border-radius: 5px; background: #247eaf; color: #fff; cursor: pointer; font: inherit; }
+.summary-actions button:hover { background: #2d9bd3; }
+.summary-actions .danger { border-color: #704654; background: #34232b; color: #e4a8b8; }
+.summary-actions .danger:hover { background: #54303b; }
+@media (max-width: 900px) and (min-width: 601px) {
+  .collection-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 .sidebar > .nav-link {
   display: block !important;

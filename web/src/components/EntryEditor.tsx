@@ -10,6 +10,7 @@ export function EntryEditor({ entry }: { entry: Entry }): JSX.Element {
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  const [editing, setEditing] = useState(!(entry.note !== null || entry.commentaire));
   async function act(deleting: boolean): Promise<void> {
     setBusy(true);
     setError("");
@@ -23,6 +24,7 @@ export function EntryEditor({ entry }: { entry: Entry }): JSX.Element {
           commentaire: commentaire || null,
         });
         setMessage("Modifications enregistrées.");
+        setEditing(false);
       }
     } catch (cause) {
       setError(errorMessage(cause));
@@ -33,6 +35,19 @@ export function EntryEditor({ entry }: { entry: Entry }): JSX.Element {
   function submit(event: FormEvent<HTMLFormElement>): void {
     event.preventDefault();
     void act(false);
+  }
+  if (!editing) {
+    return (
+      <div className="entry-summary">
+        <div className="summary-line"><span>Note</span><strong>{note ? `${note}/5` : "Non noté"}</strong></div>
+        <div className="summary-line"><span>Statut</span><strong>{statusLabels[statut]}</strong></div>
+        <div className="summary-comment"><span>Commentaire</span><p>{commentaire || "Aucun commentaire"}</p></div>
+        <div className="summary-actions">
+          <button type="button" onClick={() => setEditing(true)}>Modifier</button>
+          <button type="button" className="danger" disabled={busy} onClick={() => void act(true)}>Supprimer</button>
+        </div>
+      </div>
+    );
   }
   return (
     <form className="entry-editor" onSubmit={submit}>
