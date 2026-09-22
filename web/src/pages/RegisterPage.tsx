@@ -2,6 +2,7 @@ import "./register.css";
 import { api, errorMessage } from "../services/api";
 import { FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { AuthGameBackdrop } from "../components/AuthGameBackdrop";
 
 export function RegisterPage(): JSX.Element {
   const [message, setMessage] = useState("");
@@ -34,7 +35,8 @@ export function RegisterPage(): JSX.Element {
 
   return (
     <main className="register-page">
-      <section className="register-card">
+      <AuthGameBackdrop />
+      <section className="register-card auth-card">
         <h1>Créer un compte</h1>
         <p>Rejoignez votre ludothèque personnelle.</p>
         <form className="register-form" onSubmit={handleSubmit}>

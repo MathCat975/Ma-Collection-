@@ -3,6 +3,7 @@ import { useAuth } from "../contexts/AuthContext";
 import { errorMessage } from "../services/api";
 import { FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { AuthGameBackdrop } from "../components/AuthGameBackdrop";
 
 export function LoginPage(): JSX.Element {
   const [email, setEmail] = useState("");
@@ -31,10 +32,11 @@ export function LoginPage(): JSX.Element {
 
   return (
     <main className="login-page">
+      <AuthGameBackdrop />
       <header className="login-header">
         <div className="login-brand">MA COLLECTION</div>
       </header>
-      <section className="login-card">
+      <section className="login-card auth-card">
         <h1>Se connecter</h1>
         <p>Connectez-vous pour accéder à votre ludothèque.</p>
         <form className="login-form" onSubmit={handleSubmit}>

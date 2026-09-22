@@ -5,10 +5,17 @@ body {
   color: #d6d7d8;
 }
 .login-page {
+  position: relative;
+  overflow: hidden;
   min-height: 100vh;
   background: linear-gradient(180deg, #1b2838 0, #171a21 260px);
   box-sizing: border-box;
 }
+.auth-game-backdrop { position: absolute; inset: 0; overflow: hidden; opacity: .78; pointer-events: none; }
+.auth-game-backdrop::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #101822c7 0%, #10182282 45%, #101822b8 100%), linear-gradient(#10182255, #101822aa); }
+.auth-game-backdrop img, .auth-game-tile { position: absolute; width: 125px; height: 125px; object-fit: cover; border-radius: 7px; box-shadow: 0 14px 30px #0009; }
+.auth-game-tile { display: grid; place-items: center; padding: 12px; box-sizing: border-box; background: linear-gradient(135deg, #247eaf, #613f91); color: #fff; font-weight: 700; text-align: center; }
+.auth-card { position: relative; z-index: 1; }
 .login-header {
   background: #171a21;
   padding: 22px max(24px, 7vw);
