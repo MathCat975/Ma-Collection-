@@ -887,8 +887,10 @@ button:disabled {
 }
 .topbar .login-button {
   display: inline-block;
-  position: static;
+  position: absolute;
+  right: 36px;
 }
+.topbar-search { flex: 0 1 540px; width: 100%; max-width: 540px; padding: 12px 16px; border: 0; border-radius: 5px; background: #292d33; color: #fff; font: inherit; }
 @media (max-width: 760px) {
   .sidebar-toggle {
     position: absolute;

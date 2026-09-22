@@ -75,7 +75,7 @@ export function CataloguePage(): JSX.Element {
     return () => document.removeEventListener("mousedown", close);
   }, []);
   return (
-    <PageLayout>
+    <PageLayout searchValue={query} onSearchChange={(value) => { setQuery(value); setPage(1); }}>
       {catalogueError && !error && (
         <p role="alert">
           {catalogueError}{" "}
@@ -87,17 +87,6 @@ export function CataloguePage(): JSX.Element {
         <h1>Catalogue des jeux</h1>
         <span>{data?.total ?? 0} résultats</span>
       </div>
-      <input
-        className="search"
-        aria-label="Rechercher un jeu"
-        placeholder="Rechercher un jeu…"
-        maxLength={100}
-        value={query}
-        onChange={(event) => {
-          setQuery(event.target.value);
-          setPage(1);
-        }}
-      />
       {query.trim().length === 1 && (
         <p role="status">Saisissez au moins deux caractères pour rechercher.</p>
       )}

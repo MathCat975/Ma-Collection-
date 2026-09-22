@@ -2,7 +2,7 @@ import { ReactNode, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import "../pages/catalogue.css";
-export function PageLayout({ children }: { children: ReactNode }): JSX.Element {
+export function PageLayout({ children, searchValue, onSearchChange }: { children: ReactNode; searchValue?: string; onSearchChange?: (value: string) => void }): JSX.Element {
   const { user, logout } = useAuth();
   const [collapsed, setCollapsed] = useState(false);
   return (
@@ -31,13 +31,11 @@ export function PageLayout({ children }: { children: ReactNode }): JSX.Element {
           ☰
         </button>
         <header className="topbar">
+          {searchValue !== undefined && onSearchChange && (
+            <input className="topbar-search" aria-label="Rechercher un jeu" placeholder="Rechercher un jeu…" value={searchValue} onChange={(event) => onSearchChange(event.target.value)} />
+          )}
           {user ? (
-            <>
-              <span>{user.email}</span>
-              <button className="login-button" onClick={logout}>
-                Se déconnecter
-              </button>
-            </>
+            <button className="login-button" onClick={logout}>Se déconnecter</button>
           ) : (
             <Link className="login-button" to="/login">
               Se connecter
