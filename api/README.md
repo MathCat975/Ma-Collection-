@@ -39,6 +39,8 @@ python -m pip install -r requirements.txt
 
 Copier le fichier d'exemple :
 
+Effectuer cette copie uniquement lors de la première installation et conserver un `.env` déjà configuré.
+
 ```powershell
 Copy-Item .env.example .env
 ```
@@ -66,15 +68,17 @@ neon connection-string production --project-id PROJECT_ID
 
 Le fichier `.env` contient des secrets et ne doit jamais être ajouté à Git. Seul `.env.example` doit être versionné.
 
+Le fichier `.env.local` à la racine, s'il existe, prend la priorité sur `api/.env` pour les clés communes. Les variables d'environnement du processus sont prioritaires sur les deux fichiers.
+
 ## Peupler le catalogue
 
-Le script ajoute les 40 jeux du catalogue dans PostgreSQL :
+Le script synchronise les 59 jeux de `seed_games.json` dans PostgreSQL, répartis sur au moins quatre catégories :
 
 ```powershell
 python seed.py
 ```
 
-Le script peut être relancé sans créer de doublons.
+Le script peut être relancé sans créer de doublons. Les jeux existants sont mis à jour en conservant leurs identifiants et les collections associées.
 
 ## Lancer le serveur
 
@@ -129,6 +133,7 @@ Définir `TEST_DATABASE_URL` avec l'adresse de la branche de test :
 
 ```powershell
 $env:TEST_DATABASE_URL="postgresql://USER:PASSWORD@TEST_HOST/DATABASE?sslmode=require"
+$env:TEST_DATABASE_HOST="TEST_HOST"
 ```
 
 Puis lancer :
@@ -137,7 +142,7 @@ Puis lancer :
 python -m pytest -q
 ```
 
-Sans `TEST_DATABASE_URL`, les tests PostgreSQL sont ignorés afin d'éviter toute écriture accidentelle dans la base de production.
+Sans `TEST_DATABASE_URL` PostgreSQL valide, pytest refuse de démarrer. Il refuse également une cible identique à la base applicative configurée ou un serveur différent de `TEST_DATABASE_HOST`. Le serveur par défaut est celui de la branche Neon `testing` de l'équipe. Chaque test crée puis supprime son propre schéma temporaire ; les tables applicatives ne sont pas utilisées. Voir le [README racine](../README.md) pour la configuration locale et les variables Windows.
 
 ## Structure du backend
 
