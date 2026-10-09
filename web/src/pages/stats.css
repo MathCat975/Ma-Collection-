@@ -1,0 +1,252 @@
+.stats-dashboard {
+  --stats-accent: #8daec5;
+  --stats-muted: #a0a7b0;
+  --stats-surface: #1b2028;
+  --stats-border: #30343b;
+  color: #d7dce2;
+  padding-bottom: 24px;
+}
+
+.stats-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 12px 0 32px;
+}
+
+.stats-header h1 {
+  color: #fff;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: -0.04em;
+  margin: 8px 0 12px;
+}
+
+.stats-kicker {
+  color: var(--stats-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.stats-caption {
+  color: var(--stats-muted);
+  font-size: 0.88rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.stats-link {
+  display: inline-block;
+  padding: 12px 18px;
+  border: 1px solid var(--stats-border);
+  border-radius: 0;
+  color: #d7dce2;
+  background: #242930;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.stats-link:hover {
+  border-color: var(--stats-accent);
+  background: #2c333c;
+}
+
+.stats-metrics {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) minmax(0, 0.85fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stats-metric,
+.stats-panel {
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid var(--stats-border);
+  border-radius: 0;
+  background: var(--stats-surface);
+}
+
+.stats-metric h2 {
+  margin: 0;
+  font-weight: 400;
+  color: #d7dce2;
+  font-size: 0.92rem;
+}
+
+.stats-metric:nth-child(2) h2 {
+  color: #e5edf3;
+  font-weight: 700;
+}
+
+.stats-metric:nth-child(2) .stats-value {
+  color: #b7d0e2;
+  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+  line-height: 1.15;
+}
+
+.stats-value {
+  margin: 18px 0 10px;
+  color: #fff;
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+.stats-breakdown {
+  display: grid;
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+  gap: 24px;
+}
+
+.stats-panel h2 {
+  margin: 10px 0 24px;
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.stats-completion {
+  text-align: center;
+}
+
+.stats-ring {
+  position: relative;
+  width: 174px;
+  height: 174px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+
+.stats-ring svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  fill: none;
+  stroke-width: 5;
+}
+
+.stats-ring-track {
+  stroke: #30363e;
+}
+
+.stats-ring-fill {
+  stroke: var(--stats-accent);
+}
+
+.stats-ring > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--stats-surface);
+}
+
+.stats-ring strong {
+  color: #fff;
+  font-size: 2.4rem;
+}
+
+.stats-ring small {
+  font-size: 1rem;
+  color: var(--stats-accent);
+}
+
+.stats-ring span {
+  font-size: 0.85rem;
+  color: var(--stats-muted);
+}
+
+.stats-statuses {
+  list-style: none;
+  margin: 32px 0;
+  padding: 0;
+  display: grid;
+  gap: 28px;
+}
+
+.stats-status-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+  font-size: 0.88rem;
+}
+
+.stats-status-label strong {
+  color: #fff;
+}
+
+.stats-progress {
+  display: block;
+  appearance: none;
+  width: 100%;
+  height: 7px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: #30363e;
+  --bar-color: #737d89;
+}
+
+.stats-progress-en_cours {
+  --bar-color: #597c95;
+}
+.stats-progress-termine {
+  --bar-color: var(--stats-accent);
+}
+.stats-progress::-webkit-progress-bar {
+  background: #30363e;
+}
+.stats-progress::-webkit-progress-value {
+  background: var(--bar-color);
+  border-radius: 0;
+}
+.stats-progress::-moz-progress-bar {
+  background: var(--bar-color);
+  border-radius: 0;
+}
+.stats-text-link {
+  color: var(--stats-accent);
+  font-size: 0.9rem;
+  text-underline-offset: 5px;
+}
+.stats-empty {
+  text-align: center;
+  padding: 48px 24px;
+}
+.stats-empty p {
+  color: var(--stats-muted);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto 24px;
+}
+.stats-error button {
+  margin-left: 12px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .stats-metrics {
+    grid-template-columns: 1fr;
+  }
+  .stats-breakdown {
+    grid-template-columns: 1fr;
+  }
+  .stats-metric,
+  .stats-panel {
+    padding: 24px;
+  }
+}
