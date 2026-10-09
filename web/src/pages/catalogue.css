@@ -864,17 +864,27 @@ button:disabled {
   display: flex;
   flex: 1;
   flex-direction: column;
-  gap: 11px;
+  gap: 13px;
   padding: 14px;
   color: #cbd5e1;
   font-size: 0.85rem;
 }
-.summary-line { display: flex; justify-content: space-between; gap: 12px; padding-bottom: 9px; border-bottom: 1px solid #2b3540; }
-.summary-line span, .summary-comment > span { color: #8493a4; }
-.summary-line strong { color: #f1f5f9; font-weight: 600; }
-.summary-comment p { min-height: 42px; margin: 7px 0 0; padding: 9px; border-radius: 5px; background: #101822; color: #e8edf3; white-space: pre-wrap; }
+.summary-overview { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-bottom: 12px; border-bottom: 1px solid #2b3540; }
+.summary-rating { display: grid; gap: 5px; }
+.summary-label { color: #8493a4; font-size: 0.76rem; font-weight: 600; letter-spacing: 0.035em; text-transform: uppercase; }
+.summary-rating strong { display: flex; align-items: center; gap: 7px; color: #f1f5f9; }
+.rating-stars { color: #f4bc58; font-size: 0.9rem; letter-spacing: 0.08em; white-space: nowrap; }
+.rating-value { font-size: 0.85rem; }
+.rating-empty { font-size: 0.85rem; font-weight: 500; }
+.status-pill { max-width: 55%; padding: 6px 10px; border: 1px solid #36566b; border-radius: 999px; background: #172b38; color: #9dd7f2; font-size: 0.76rem; font-weight: 650; line-height: 1.2; text-align: center; }
+.status-termine { border-color: #315c4b; background: #172c24; color: #9de0b9; }
+.status-en_cours { border-color: #65532f; background: #302719; color: #f1cb7a; }
+.status-a_decouvrir { border-color: #3b4d68; background: #1c2738; color: #afc8ee; }
+.summary-comment { display: grid; gap: 7px; }
+.summary-comment p { min-height: 0; margin: 0; padding: 11px 12px; border: 1px solid #2b3540; border-radius: 7px; background: #141a22; color: #dce5ef; line-height: 1.55; overflow-wrap: anywhere; white-space: pre-wrap; }
+.summary-date { margin: 0; color: #758396; font-size: 0.76rem; }
 .summary-actions { display: grid; gap: 7px; margin-top: auto; }
-.entry-summary .summary-actions { margin-top: 4px; }
+.entry-summary .summary-actions { margin-top: 0; }
 .summary-actions button { min-height: 32px; padding: 7px 10px; border: 1px solid #3e83b1; border-radius: 5px; background: #247eaf; color: #fff; cursor: pointer; font: inherit; }
 .summary-actions button:hover { background: #2d9bd3; }
 .summary-actions .danger { border-color: #704654; background: #34232b; color: #e4a8b8; }

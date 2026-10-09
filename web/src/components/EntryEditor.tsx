@@ -39,9 +39,29 @@ export function EntryEditor({ entry }: { entry: Entry }): JSX.Element {
   if (!editing) {
     return (
       <div className="entry-summary">
-        <div className="summary-line"><span>Note</span><strong>{note ? `${note}/5` : "Non noté"}</strong></div>
-        <div className="summary-line"><span>Statut</span><strong>{statusLabels[statut]}</strong></div>
-        <div className="summary-comment"><span>Commentaire</span><p>{commentaire || "Aucun commentaire"}</p></div>
+        <div className="summary-overview">
+          <div className="summary-rating">
+            <span className="summary-label">Votre note</span>
+            {note ? (
+              <strong aria-label={`${note} sur 5`}>
+                <span className="rating-stars" aria-hidden="true">
+                  {"★".repeat(Number(note))}{"☆".repeat(5 - Number(note))}
+                </span>
+                <span className="rating-value">{note}/5</span>
+              </strong>
+            ) : (
+              <strong className="rating-empty">Non noté</strong>
+            )}
+          </div>
+          <span className={`status-pill status-${statut}`}>{statusLabels[statut]}</span>
+        </div>
+        <section className="summary-comment">
+          <span className="summary-label">Votre commentaire</span>
+          <p>{commentaire || "Aucun commentaire pour le moment."}</p>
+        </section>
+        <p className="summary-date">
+          Ajouté le {new Date(entry.date_ajout).toLocaleDateString("fr-FR")}
+        </p>
         <div className="summary-actions">
           <button type="button" onClick={() => setEditing(true)}>Modifier</button>
           <button type="button" className="danger" disabled={busy} onClick={() => void act(true)}>Supprimer</button>
