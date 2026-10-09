@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { PageLayout } from "../components/PageLayout";
+import { StatsOverview } from "../components/StatsOverview";
 import { useAuth } from "../contexts/AuthContext";
 import { useCollection } from "../contexts/CollectionContext";
 import { api, errorMessage } from "../services/api";
-import { Stats, statusLabels } from "../types/api";
+import { Stats } from "../types/api";
+import "./stats.css";
 export function StatsPage(): JSX.Element {
   const { token } = useAuth();
   const { entries } = useCollection();
@@ -34,45 +36,28 @@ export function StatsPage(): JSX.Element {
   }, [token, entries, retry]);
   return (
     <PageLayout>
-      <h1>Mes statistiques</h1>
-      {loading ? (
-        <p role="status">Chargement des statistiques…</p>
-      ) : error ? (
-        <p role="alert">
-          {error} <button onClick={() => setRetry(retry + 1)}>Réessayer</button>
-        </p>
-      ) : (
-        data && (
-          <>
-            {data.total === 0 && (
-              <p role="status">
-                Votre collection est vide.{" "}
-                <Link to="/catalogue">Ajoutez votre premier jeu.</Link>
-              </p>
-            )}
-            <section className="stats-grid">
-              <article>
-                <h2>Total</h2>
-                <p>{data.total}</p>
-              </article>
-              <article>
-                <h2>Note moyenne</h2>
-                <p>
-                  {data.note_moyenne === null
-                    ? "Aucune note"
-                    : `${data.note_moyenne.toFixed(1)} / 5`}
-                </p>
-              </article>
-              {Object.entries(statusLabels).map(([value, label]) => (
-                <article key={value}>
-                  <h2>{label}</h2>
-                  <p>{data.par_statut[value as keyof typeof statusLabels]}</p>
-                </article>
-              ))}
-            </section>
-          </>
-        )
-      )}
+      <div className="stats-dashboard">
+        <header className="stats-header">
+          <div>
+            <h1>Mes statistiques</h1>
+          </div>
+          <Link className="stats-link" to="/collection">
+            Ma collection →
+          </Link>
+        </header>
+        {loading ? (
+          <p className="stats-panel" role="status">
+            Chargement des statistiques…
+          </p>
+        ) : error ? (
+          <p className="stats-panel stats-error" role="alert">
+            {error}{" "}
+            <button onClick={() => setRetry(retry + 1)}>Réessayer</button>
+          </p>
+        ) : (
+          data && <StatsOverview data={data} />
+        )}
+      </div>
     </PageLayout>
   );
 }
